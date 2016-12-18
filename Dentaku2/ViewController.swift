@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnTapped(_ sender: Any) {
-        print("1")
+        resultTextView.text = "1"
     }
 
 
