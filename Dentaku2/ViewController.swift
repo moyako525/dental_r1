@@ -17,11 +17,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func btnTapped(_ sender: Any) {
+    @IBAction func btnTapped(_ sender: UIButton) {
         resultTextView.text = "1"
     }
-
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
