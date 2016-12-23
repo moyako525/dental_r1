@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     var intNum1: Int = 0
     var intNum2: Int = 0
     var result: Int = 0
+    var numArray = [Int]()
+//    var count: Int = 0
+    
 
 
     override func viewDidLoad() {
@@ -35,39 +38,43 @@ class ViewController: UIViewController {
                 resultTextView.text = num
             case 2:
                 num = "2"
-                resultTextView.text = "2"
+                resultTextView.text = num
             case 3:
                 num = "3"
-                resultTextView.text = "3"
+                resultTextView.text = num
             case 4:
                 num = "4"
-                resultTextView.text = "4"
+                resultTextView.text = num
             case 5:
                 num = "5"
-                resultTextView.text = "5"
+                resultTextView.text = num
             case 6:
                 num = "6"
-                resultTextView.text = "6"
+                resultTextView.text = num
             case 7:
                 num = "7"
-                resultTextView.text = "7"
+                resultTextView.text = num
             case 8:
                 num = "8"
-                resultTextView.text = "8"
+                resultTextView.text = num
             case 9:
                 num = "9"
-                resultTextView.text = "9"
+                resultTextView.text = num
             case 10:
                 num = "0"
-                resultTextView.text = "0"
+                resultTextView.text = num
+                numArray.removeAll()
             case 11:
                 intNum1 = Int(resultTextView.text)!
                 num = "0"
+                numArray.append(intNum1)
+                result = numArray.reduce(0, +)
+                resultTextView.text = String(result)
             case 12:
                 intNum2 = Int(resultTextView.text)!
-                result = intNum1 + intNum2
+                numArray.append(intNum2)
+                result = numArray.reduce(0, +)
                 resultTextView.text = String(result)
-                num1 = String(result)
             default:
                 break
             }
@@ -107,14 +114,18 @@ class ViewController: UIViewController {
             case 10:
                 num = "0"
                 resultTextView.text = num
+                numArray.removeAll()
             case 11:
                 intNum1 = Int(resultTextView.text)!
                 num = "0"
+                numArray.append(intNum1)
+                result = numArray.reduce(0, +)
+                resultTextView.text = String(result)
             case 12:
                 intNum2 = Int(resultTextView.text)!
-                result = intNum1 + intNum2
+                numArray.append(intNum2)
+                result = numArray.reduce(0, +)
                 resultTextView.text = String(result)
-                num1 = String(result)
             default:
                 break
             }
