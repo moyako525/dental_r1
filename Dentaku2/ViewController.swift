@@ -51,6 +51,9 @@ class ViewController: UIViewController {
             case 9:
                 num = "9"
                 resultTextView.text = "9"
+            case 10:
+                num = "0"
+                resultTextView.text = "0"
             default:
                 break
             }
@@ -88,9 +91,11 @@ class ViewController: UIViewController {
             case 9:
                 num += "9"
                 resultTextView.text = num
+            case 10:
+                num = "0"
+                resultTextView.text = num
             default:
                 break
-                
             }
         }
 
