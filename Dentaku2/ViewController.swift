@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
+    var count: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,31 +20,79 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnTapped(_ sender: UIButton) {
+        if num == "0" {
             switch sender.tag {
             case 0:
                 resultTextView.text = "0"
             case 1:
-                num += "1"
+                num = "1"
                 resultTextView.text = num
             case 2:
+                num = "2"
                 resultTextView.text = "2"
             case 3:
+                num = "3"
                 resultTextView.text = "3"
             case 4:
+                num = "4"
                 resultTextView.text = "4"
             case 5:
+                num = "5"
                 resultTextView.text = "5"
             case 6:
+                num = "6"
                 resultTextView.text = "6"
             case 7:
+                num = "7"
                 resultTextView.text = "7"
             case 8:
+                num = "8"
                 resultTextView.text = "8"
             case 9:
+                num = "9"
                 resultTextView.text = "9"
             default:
                 break
             }
+            count += 1
+        }
+        else {
+            switch sender.tag {
+            case 0:
+                num += "0"
+                resultTextView.text = num
+            case 1:
+                num += "1"
+                resultTextView.text = num
+            case 2:
+                num += "2"
+                resultTextView.text = num
+            case 3:
+                num += "3"
+                resultTextView.text = num
+            case 4:
+                num += "4"
+                resultTextView.text = num
+            case 5:
+                num += "5"
+                resultTextView.text = num
+            case 6:
+                num += "6"
+                resultTextView.text = num
+            case 7:
+                num += "7"
+                resultTextView.text = num
+            case 8:
+                num += "8"
+                resultTextView.text = num
+            case 9:
+                num += "9"
+                resultTextView.text = num
+            default:
+                break
+                
+            }
+        }
 
     }
     override func didReceiveMemoryWarning() {
