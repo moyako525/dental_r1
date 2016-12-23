@@ -12,9 +12,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
-    var count: Int = 0
     var num1: String = "0"
     var num2: String = "0"
+    var intNum1: Int = 0
+    var intNum2: Int = 0
+    var result: Int = 0
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,16 +60,18 @@ class ViewController: UIViewController {
             case 10:
                 num = "0"
                 resultTextView.text = "0"
+            case 11:
+                num1 = num
+                num = "0"
             case 12:
-                num2 = num
-                var intNum1: Int = Int(num1)!
-                var intNum2: Int = Int(num2)!
-                var result:Int = intNum1 + intNum2
+                intNum1 = Int(num1)!
+                intNum2 = Int(resultTextView.text)!
+                result = intNum1 + intNum2
                 resultTextView.text = String(result)
+                num1 = String(result)
             default:
                 break
             }
-            count += 1
         }
         else {
             switch sender.tag {
@@ -106,12 +111,10 @@ class ViewController: UIViewController {
             case 11:
                 num1 = num
                 num = "0"
-                count += 1
             case 12:
-                num2 = num
-                var intNum1: Int = Int(num1)!
-                var intNum2: Int = Int(num2)!
-                var result:Int = intNum1 + intNum2
+                intNum1 = Int(num1)!
+                intNum2 = Int(resultTextView.text)!
+                result = intNum1 + intNum2
                 resultTextView.text = String(result)
             default:
                 break
