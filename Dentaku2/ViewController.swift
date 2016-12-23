@@ -61,10 +61,9 @@ class ViewController: UIViewController {
                 num = "0"
                 resultTextView.text = "0"
             case 11:
-                num1 = num
+                intNum1 = Int(resultTextView.text)!
                 num = "0"
             case 12:
-                intNum1 = Int(num1)!
                 intNum2 = Int(resultTextView.text)!
                 result = intNum1 + intNum2
                 resultTextView.text = String(result)
@@ -109,13 +108,13 @@ class ViewController: UIViewController {
                 num = "0"
                 resultTextView.text = num
             case 11:
-                num1 = num
+                intNum1 = Int(resultTextView.text)!
                 num = "0"
             case 12:
-                intNum1 = Int(num1)!
                 intNum2 = Int(resultTextView.text)!
                 result = intNum1 + intNum2
                 resultTextView.text = String(result)
+                num1 = String(result)
             default:
                 break
             }
