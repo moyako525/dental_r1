@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
     var count: Int = 0
+    var num1: String = "0"
+    var num2: String = "0"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class ViewController: UIViewController {
     @IBAction func btnTapped(_ sender: UIButton) {
         if num == "0" {
             switch sender.tag {
+                //AC:10 +:11 =:12
             case 0:
                 resultTextView.text = "0"
             case 1:
@@ -54,6 +57,12 @@ class ViewController: UIViewController {
             case 10:
                 num = "0"
                 resultTextView.text = "0"
+            case 12:
+                num2 = num
+                var intNum1: Int = Int(num1)!
+                var intNum2: Int = Int(num2)!
+                var result:Int = intNum1 + intNum2
+                resultTextView.text = String(result)
             default:
                 break
             }
@@ -94,6 +103,16 @@ class ViewController: UIViewController {
             case 10:
                 num = "0"
                 resultTextView.text = num
+            case 11:
+                num1 = num
+                num = "0"
+                count += 1
+            case 12:
+                num2 = num
+                var intNum1: Int = Int(num1)!
+                var intNum2: Int = Int(num2)!
+                var result:Int = intNum1 + intNum2
+                resultTextView.text = String(result)
             default:
                 break
             }
