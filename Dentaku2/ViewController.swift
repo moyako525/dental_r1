@@ -12,10 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
-    var num1: String = "0"
-    var num2: String = "0"
-    var intNum1: Int = 0
-    var intNum2: Int = 0
+    var intNum: Int = 0
     var result: Int = 0
     var numArray = [0]
     var activeBtn = false
@@ -78,24 +75,24 @@ class ViewController: UIViewController {
                 numArray.removeAll()
             case 11:
                 if activeBtn == true {
-                    intNum1 = Int(resultTextView.text)!
-                    num = "0"
-                    numArray.append(intNum1)
+                    intNum = Int(resultTextView.text)!
+                    numArray.append(intNum)
                     result = numArray.reduce(0, +)
                     resultTextView.text = String(result)
                     activeBtn = false
                     numArray.removeAll()
                     numArray.append(result)
-                }else{
                     num = "0"
+                }else{
                     result = numArray.reduce(0, +)
                     resultTextView.text = String(result)
                     activeBtn = false
+                    num = "0"
                 }
             case 12:
                 if activeBtn == true {
-                    intNum2 = Int(resultTextView.text)!
-                    numArray.append(intNum2)
+                    intNum = Int(resultTextView.text)!
+                    numArray.append(intNum)
                     result = numArray.reduce(0, +)
                     resultTextView.text = String(result)
                     activeBtn = false
@@ -159,24 +156,24 @@ class ViewController: UIViewController {
                 numArray.removeAll()
             case 11:
                 if activeBtn == true {
-                    intNum1 = Int(resultTextView.text)!
-                    num = "0"
-                    numArray.append(intNum1)
+                    intNum = Int(resultTextView.text)!
+                    numArray.append(intNum)
                     result = numArray.reduce(0, +)
                     resultTextView.text = String(result)
                     activeBtn = false
                     numArray.removeAll()
                     numArray.append(result)
-                }else{
                     num = "0"
+                }else{
                     result = numArray.reduce(0, +)
                     resultTextView.text = String(result)
                     activeBtn = false
+                    num = "0"
                 }
             case 12:
                 if activeBtn == true {
-                    intNum2 = Int(resultTextView.text)!
-                    numArray.append(intNum2)
+                    intNum = Int(resultTextView.text)!
+                    numArray.append(intNum)
                     result = numArray.reduce(0, +)
                     resultTextView.text = String(result)
                     activeBtn = false
