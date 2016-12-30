@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func btnTapped(_ sender: UIButton) {
         if num == "0" {
             switch sender.tag {
-                //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17
+                //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
             case 0:
                 resultTextView.text = "0"
                 activeBtn = true
