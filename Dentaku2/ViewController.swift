@@ -73,12 +73,13 @@ class ViewController: UIViewController {
                 num = "0"
                 resultTextView.text = num
                 activeBtn = false
-                numArray = ["0"]
+                self.numArray = ["0"]
             case 11:
                 if activeBtn == true {
                     stringNum = resultTextView.text
-                    if numArray == ["0"]{
+                    if numArray.count == 1{
                         numArray[0] = stringNum
+                        num = "0"
                     }else{
                         numArray.append(stringNum)
                         switch numArray[1] {
@@ -88,9 +89,7 @@ class ViewController: UIViewController {
                             break
                         }
                         resultTextView.text = String(result)
-                        activeBtn = false
-                        numArray.removeAll()
-                        numArray.append(String(result))
+                        self.numArray = [String(result)]
                         num = "0"
                     }
                 }else{
@@ -115,7 +114,7 @@ class ViewController: UIViewController {
                         }
                         resultTextView.text = String(result)
                         activeBtn = false
-                        numArray = [String(result)]
+                        self.numArray = [String(result)]
                         numArray.append("+")
                         num = "0"
                     }
@@ -172,12 +171,13 @@ class ViewController: UIViewController {
                 num = "0"
                 resultTextView.text = num
                 activeBtn = false
-                numArray = ["0"]
+                self.numArray = ["0"]
             case 11:
                 if activeBtn == true {
                     stringNum = resultTextView.text
-                    if numArray == ["0"]{
+                    if numArray.count == 1{
                         numArray[0] = stringNum
+                        num = "0"
                     }else{
                         numArray.append(stringNum)
                         switch numArray[1] {
@@ -187,9 +187,7 @@ class ViewController: UIViewController {
                             break
                         }
                         resultTextView.text = String(result)
-                        activeBtn = false
-                        numArray.removeAll()
-                        numArray.append(String(result))
+                        self.numArray = [String(result)]
                         num = "0"
                     }
                 }else{
@@ -199,7 +197,7 @@ class ViewController: UIViewController {
                 if activeBtn == true {
                     stringNum = resultTextView.text
                     if numArray.count == 1{
-                        numArray[0] = stringNum
+                        self.numArray[0] = stringNum
                         numArray.append("+")
                         activeBtn = false
                         num = "0"
@@ -214,7 +212,7 @@ class ViewController: UIViewController {
                         }
                         resultTextView.text = String(result)
                         activeBtn = false
-                        numArray = [String(result)]
+                        self.numArray = [String(result)]
                         numArray.append("+")
                         num = "0"
                     }
