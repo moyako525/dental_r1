@@ -12,9 +12,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
+    var stringNum: String = "0"
     var intNum: Int = 0
     var result: Int = 0
-    var numArray = [0]
+    var numArray = ["0"]
     var activeBtn = false
 //    var count: Int = 0
     
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func btnTapped(_ sender: UIButton) {
         if num == "0" {
             switch sender.tag {
-                //AC:10 +:11 =:12
+                //AC:10 =:11 +:12 -:13
             case 0:
                 resultTextView.text = "0"
                 activeBtn = true
@@ -72,36 +73,54 @@ class ViewController: UIViewController {
                 num = "0"
                 resultTextView.text = num
                 activeBtn = false
-                numArray.removeAll()
+                numArray = ["0"]
             case 11:
                 if activeBtn == true {
-                    intNum = Int(resultTextView.text)!
-                    numArray.append(intNum)
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
-                    numArray.removeAll()
-                    numArray.append(result)
-                    num = "0"
+                    stringNum = resultTextView.text
+                    if numArray == ["0"]{
+                        numArray[0] = stringNum
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1] {
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        numArray.removeAll()
+                        numArray.append(String(result))
+                        num = "0"
+                    }
                 }else{
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
                     num = "0"
                 }
             case 12:
                 if activeBtn == true {
-                    intNum = Int(resultTextView.text)!
-                    numArray.append(intNum)
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
-                    numArray.removeAll()
-                    numArray.append(result)
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("+")
+                        activeBtn = false
+                        num = "0"
+
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                            case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        numArray = [String(result)]
+                        numArray.append("+")
+                        num = "0"
+                    }
                 }else{
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
+                    num = "0"
                 }
             default:
                 break
@@ -153,36 +172,54 @@ class ViewController: UIViewController {
                 num = "0"
                 resultTextView.text = num
                 activeBtn = false
-                numArray.removeAll()
+                numArray = ["0"]
             case 11:
                 if activeBtn == true {
-                    intNum = Int(resultTextView.text)!
-                    numArray.append(intNum)
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
-                    numArray.removeAll()
-                    numArray.append(result)
-                    num = "0"
+                    stringNum = resultTextView.text
+                    if numArray == ["0"]{
+                        numArray[0] = stringNum
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1] {
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        numArray.removeAll()
+                        numArray.append(String(result))
+                        num = "0"
+                    }
                 }else{
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
                     num = "0"
                 }
             case 12:
                 if activeBtn == true {
-                    intNum = Int(resultTextView.text)!
-                    numArray.append(intNum)
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
-                    numArray.removeAll()
-                    numArray.append(result)
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("+")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        numArray = [String(result)]
+                        numArray.append("+")
+                        num = "0"
+                    }
                 }else{
-                    result = numArray.reduce(0, +)
-                    resultTextView.text = String(result)
-                    activeBtn = false
+                    num = "0"
                 }
             default:
                 break
