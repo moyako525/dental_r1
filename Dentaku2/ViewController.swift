@@ -13,11 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
     var stringNum: String = "0"
-    var intNum: Double = 0
     var result: Double = 0
     var numArray = ["0"]
     var activeBtn = false
-//    var count: Int = 0
     
 
 
@@ -29,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func btnTapped(_ sender: UIButton) {
         if num == "0" {
             switch sender.tag {
-                //AC:10 =:11 +:12 -:13 ×:14 ÷:15
+                //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16
             case 0:
                 resultTextView.text = "0"
                 activeBtn = true
@@ -229,7 +227,12 @@ class ViewController: UIViewController {
                 }else{
                     num = "0"
                 }
-
+            case 16:
+                stringNum = resultTextView.text
+                result = Double(stringNum)!/100
+                resultTextView.text = String(result)
+                numArray = [String(result)]
+                num = "0"
             default:
                 break
             }
@@ -436,6 +439,12 @@ class ViewController: UIViewController {
                 }else{
                     num = "0"
                 }
+            case 16:
+                stringNum = resultTextView.text
+                result = Double(stringNum)!/100
+                resultTextView.text = String(result)
+                numArray = [String(result)]
+                num = "0"
             default:
                 break
             }
