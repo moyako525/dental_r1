@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     @IBAction func btnTapped(_ sender: UIButton) {
         if num == "0" {
             switch sender.tag {
-                //AC:10 =:11 +:12 -:13
+                //AC:10 =:11 +:12 -:13 ×:14 ÷:15
             case 0:
                 resultTextView.text = "0"
                 activeBtn = true
@@ -85,6 +85,12 @@ class ViewController: UIViewController {
                         switch numArray[1] {
                         case "+":
                             result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
                         default:
                             break
                         }
@@ -107,8 +113,14 @@ class ViewController: UIViewController {
                     }else{
                         numArray.append(stringNum)
                         switch numArray[1]{
-                            case "+":
+                        case "+":
                             result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
                         default:
                             break
                         }
@@ -121,6 +133,103 @@ class ViewController: UIViewController {
                 }else{
                     num = "0"
                 }
+            case 13:
+                if activeBtn == true {
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("-")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        self.numArray = [String(result)]
+                        numArray.append("-")
+                        num = "0"
+                    }
+                }else{
+                    num = "0"
+                }
+            case 14:
+                if activeBtn == true {
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("×")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        self.numArray = [String(result)]
+                        numArray.append("×")
+                        num = "0"
+                    }
+                }else{
+                    num = "0"
+                }
+            case 15:
+                if activeBtn == true {
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("÷")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        self.numArray = [String(result)]
+                        numArray.append("÷")
+                        num = "0"
+                    }
+                }else{
+                    num = "0"
+                }
+
             default:
                 break
             }
@@ -183,6 +292,12 @@ class ViewController: UIViewController {
                         switch numArray[1] {
                         case "+":
                             result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
                         default:
                             break
                         }
@@ -207,6 +322,12 @@ class ViewController: UIViewController {
                         switch numArray[1]{
                         case "+":
                             result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
                         default:
                             break
                         }
@@ -214,6 +335,102 @@ class ViewController: UIViewController {
                         activeBtn = false
                         self.numArray = [String(result)]
                         numArray.append("+")
+                        num = "0"
+                    }
+                }else{
+                    num = "0"
+                }
+            case 13:
+                if activeBtn == true {
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("-")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        self.numArray = [String(result)]
+                        numArray.append("-")
+                        num = "0"
+                    }
+                }else{
+                    num = "0"
+                }
+            case 14:
+                if activeBtn == true {
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("×")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        self.numArray = [String(result)]
+                        numArray.append("×")
+                        num = "0"
+                    }
+                }else{
+                    num = "0"
+                }
+            case 15:
+                if activeBtn == true {
+                    stringNum = resultTextView.text
+                    if numArray.count == 1{
+                        numArray[0] = stringNum
+                        numArray.append("÷")
+                        activeBtn = false
+                        num = "0"
+                        
+                    }else{
+                        numArray.append(stringNum)
+                        switch numArray[1]{
+                        case "+":
+                            result = Int(numArray[0])! + Int(numArray[2])!
+                        case "-":
+                            result = Int(numArray[0])! - Int(numArray[2])!
+                        case "×":
+                            result = Int(numArray[0])! * Int(numArray[2])!
+                        case "÷":
+                            result = Int(numArray[0])!/Int(numArray[2])!
+                        default:
+                            break
+                        }
+                        resultTextView.text = String(result)
+                        activeBtn = false
+                        self.numArray = [String(result)]
+                        numArray.append("÷")
                         num = "0"
                     }
                 }else{
