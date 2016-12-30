@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
     var stringNum: String = "0"
-    var intNum: Int = 0
-    var result: Int = 0
+    var intNum: Double = 0
+    var result: Double = 0
     var numArray = ["0"]
     var activeBtn = false
 //    var count: Int = 0
@@ -84,13 +84,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1] {
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -114,13 +114,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -146,13 +146,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -178,13 +178,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -210,13 +210,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -291,13 +291,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1] {
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -321,13 +321,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -353,13 +353,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -385,13 +385,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
@@ -417,13 +417,13 @@ class ViewController: UIViewController {
                         numArray.append(stringNum)
                         switch numArray[1]{
                         case "+":
-                            result = Int(numArray[0])! + Int(numArray[2])!
+                            result = Double(numArray[0])! + Double(numArray[2])!
                         case "-":
-                            result = Int(numArray[0])! - Int(numArray[2])!
+                            result = Double(numArray[0])! - Double(numArray[2])!
                         case "×":
-                            result = Int(numArray[0])! * Int(numArray[2])!
+                            result = Double(numArray[0])! * Double(numArray[2])!
                         case "÷":
-                            result = Int(numArray[0])!/Int(numArray[2])!
+                            result = Double(numArray[0])! / Double(numArray[2])!
                         default:
                             break
                         }
