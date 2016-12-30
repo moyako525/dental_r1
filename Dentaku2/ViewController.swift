@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     @IBAction func btnTapped(_ sender: UIButton) {
         if num == "0" {
             switch sender.tag {
-                //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16
+                //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17
             case 0:
                 resultTextView.text = "0"
                 activeBtn = true
@@ -230,6 +230,12 @@ class ViewController: UIViewController {
             case 16:
                 stringNum = resultTextView.text
                 result = Double(stringNum)!/100
+                resultTextView.text = String(result)
+                numArray = [String(result)]
+                num = "0"
+            case 17:
+                stringNum = resultTextView.text
+                result = Double(stringNum)! * (-1)
                 resultTextView.text = String(result)
                 numArray = [String(result)]
                 num = "0"
@@ -442,6 +448,12 @@ class ViewController: UIViewController {
             case 16:
                 stringNum = resultTextView.text
                 result = Double(stringNum)!/100
+                resultTextView.text = String(result)
+                numArray = [String(result)]
+                num = "0"
+            case 17:
+                stringNum = resultTextView.text
+                result = Double(stringNum)! * (-1)
                 resultTextView.text = String(result)
                 numArray = [String(result)]
                 num = "0"
