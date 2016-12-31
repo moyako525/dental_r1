@@ -39,14 +39,14 @@ class ViewController: UIViewController {
     
     @IBAction func btnTapped(_ sender: UIButton) {
         switch sender.tag {
-            //AC:1 =:2 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
+            //AC:1 =:2 +:3 -:4 ×:5 ÷:6 %:7 +/-:8 .:9
             
-        case 10:
+        case 1:
             num = "0"
             resultTextView.text = num
             activeBtn = false
             self.numArray = ["0"]
-        case 11:
+        case 2:
             if activeBtn == true {
                 stringNum = resultTextView.text
                 if numArray.count == 1{
@@ -78,15 +78,15 @@ class ViewController: UIViewController {
             }else{
                 num = "0"
             }
-        case 12,13,14,15:
+        case 3,4,5,6:
             switch sender.tag {
-            case 12:
+            case 3:
                 stringSymbol = "+"
-            case 13:
+            case 4:
                 stringSymbol = "-"
-            case 14:
+            case 5:
                 stringSymbol = "×"
-            case 15:
+            case 6:
                 stringSymbol = "÷"
             default:
                 break
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
                 numArray.append("\(stringSymbol)")
                 num = "0"
             }
-        case 16:
+        case 7:
             stringNum = resultTextView.text
             result = Double(stringNum)!/100
             stringNum = String(result)
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
             resultTextView.text = stringNum
             numArray = [String(result)]
             num = "0"
-        case 17:
+        case 8:
             stringNum = resultTextView.text
             result = Double(stringNum)! * (-1)
             stringNum = String(result)
@@ -150,7 +150,7 @@ class ViewController: UIViewController {
             resultTextView.text = stringNum
             numArray = [String(result)]
             num = "0"
-        case 18:
+        case 9:
             num += "."
             resultTextView.text = num
             activeBtn = true
