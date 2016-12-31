@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultTextView: UITextView!
     var num: String = "0"
     var stringNum: String = "0"
+    var stringSymbol: String = ""
     var result: Double = 0
     var numArray = ["0"]
     var activeBtn = false
@@ -38,8 +39,8 @@ class ViewController: UIViewController {
     
     @IBAction func btnTapped(_ sender: UIButton) {
         switch sender.tag {
-        //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
-
+            //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
+            
         case 10:
             num = "0"
             resultTextView.text = num
@@ -77,50 +78,24 @@ class ViewController: UIViewController {
             }else{
                 num = "0"
             }
-        case 12:
-            if activeBtn == true {
-                stringNum = resultTextView.text
-                if numArray.count == 1{
-                    numArray[0] = stringNum
-                    numArray.append("+")
-                    activeBtn = false
-                    num = "0"
-                    
-                }else{
-                    numArray.append(stringNum)
-                    switch numArray[1]{
-                    case "+":
-                        result = Double(numArray[0])! + Double(numArray[2])!
-                    case "-":
-                        result = Double(numArray[0])! - Double(numArray[2])!
-                    case "×":
-                        result = Double(numArray[0])! * Double(numArray[2])!
-                    case "÷":
-                        result = Double(numArray[0])! / Double(numArray[2])!
-                    default:
-                        break
-                    }
-                    stringNum = String(result)
-                    if stringNum.hasSuffix(".0"){
-                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
-                        stringNum = stringNum.substring(to:currentIndex)
-                    }
-                    resultTextView.text = stringNum
-                    activeBtn = false
-                    self.numArray = [String(result)]
-                    numArray.append("+")
-                    num = "0"
-                }
-            }else{
-                numArray.append("+")
-                num = "0"
+        case 12,13,14,15:
+            switch sender.tag {
+            case 12:
+                stringSymbol = "+"
+            case 13:
+                stringSymbol = "-"
+            case 14:
+                stringSymbol = "×"
+            case 15:
+                stringSymbol = "÷"
+            default:
+                break
             }
-        case 13:
             if activeBtn == true {
                 stringNum = resultTextView.text
                 if numArray.count == 1{
                     numArray[0] = stringNum
-                    numArray.append("-")
+                    numArray.append("\(stringSymbol)")
                     activeBtn = false
                     num = "0"
                     
@@ -146,87 +121,11 @@ class ViewController: UIViewController {
                     resultTextView.text = stringNum
                     activeBtn = false
                     self.numArray = [String(result)]
-                    numArray.append("-")
+                    numArray.append("\(stringSymbol)")
                     num = "0"
                 }
             }else{
-                numArray.append("-")
-                num = "0"
-            }
-        case 14:
-            if activeBtn == true {
-                stringNum = resultTextView.text
-                if numArray.count == 1{
-                    numArray[0] = stringNum
-                    numArray.append("×")
-                    activeBtn = false
-                    num = "0"
-                    
-                }else{
-                    numArray.append(stringNum)
-                    switch numArray[1]{
-                    case "+":
-                        result = Double(numArray[0])! + Double(numArray[2])!
-                    case "-":
-                        result = Double(numArray[0])! - Double(numArray[2])!
-                    case "×":
-                        result = Double(numArray[0])! * Double(numArray[2])!
-                    case "÷":
-                        result = Double(numArray[0])! / Double(numArray[2])!
-                    default:
-                        break
-                    }
-                    stringNum = String(result)
-                    if stringNum.hasSuffix(".0"){
-                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
-                        stringNum = stringNum.substring(to:currentIndex)
-                    }
-                    resultTextView.text = stringNum
-                    activeBtn = false
-                    self.numArray = [String(result)]
-                    numArray.append("×")
-                    num = "0"
-                }
-            }else{
-                numArray.append("×")
-                num = "0"
-            }
-        case 15:
-            if activeBtn == true {
-                stringNum = resultTextView.text
-                if numArray.count == 1{
-                    numArray[0] = stringNum
-                    numArray.append("÷")
-                    activeBtn = false
-                    num = "0"
-                    
-                }else{
-                    numArray.append(stringNum)
-                    switch numArray[1]{
-                    case "+":
-                        result = Double(numArray[0])! + Double(numArray[2])!
-                    case "-":
-                        result = Double(numArray[0])! - Double(numArray[2])!
-                    case "×":
-                        result = Double(numArray[0])! * Double(numArray[2])!
-                    case "÷":
-                        result = Double(numArray[0])! / Double(numArray[2])!
-                    default:
-                        break
-                    }
-                    stringNum = String(result)
-                    if stringNum.hasSuffix(".0"){
-                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
-                        stringNum = stringNum.substring(to:currentIndex)
-                    }
-                    resultTextView.text = stringNum
-                    activeBtn = false
-                    self.numArray = [String(result)]
-                    numArray.append("÷")
-                    num = "0"
-                }
-            }else{
-                numArray.append("÷")
+                numArray.append("\(stringSymbol)")
                 num = "0"
             }
         case 16:
