@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
     
@@ -36,40 +37,85 @@ class ViewController: UIViewController {
             }
             activeBtn = true
         case 1:
-            num = "1"
-            resultTextView.text = num
+            if num == "0" {
+                num = "1"
+                resultTextView.text = "1"
+            }else{
+                num += "1"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 2:
-            num = "2"
-            resultTextView.text = num
+            if num == "0" {
+                num = "2"
+                resultTextView.text = "2"
+            }else{
+                num += "2"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 3:
-            num = "3"
-            resultTextView.text = num
+            if num == "0" {
+                num = "3"
+                resultTextView.text = "3"
+            }else{
+                num += "3"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 4:
-            num = "4"
-            resultTextView.text = num
+            if num == "0" {
+                num = "4"
+                resultTextView.text = "4"
+            }else{
+                num += "4"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 5:
-            num = "5"
-            resultTextView.text = num
+            if num == "0" {
+                num = "5"
+                resultTextView.text = "5"
+            }else{
+                num += "5"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 6:
-            num = "6"
-            resultTextView.text = num
+            if num == "0" {
+                num = "6"
+                resultTextView.text = "6"
+            }else{
+                num += "6"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 7:
-            num = "7"
-            resultTextView.text = num
+            if num == "0" {
+                num = "7"
+                resultTextView.text = "7"
+            }else{
+                num += "7"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 8:
-            num = "8"
-            resultTextView.text = num
+            if num == "0" {
+                num = "8"
+                resultTextView.text = "8"
+            }else{
+                num += "8"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 9:
-            num = "9"
-            resultTextView.text = num
+            if num == "0" {
+                num = "9"
+                resultTextView.text = "9"
+            }else{
+                num += "9"
+                resultTextView.text = num
+            }
             activeBtn = true
         case 10:
             num = "0"
@@ -96,7 +142,12 @@ class ViewController: UIViewController {
                     default:
                         break
                     }
-                    resultTextView.text = String(result)
+                    stringNum = String(result)
+                    if stringNum.hasSuffix(".0"){
+                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                        stringNum = stringNum.substring(to:currentIndex)
+                    }
+                    resultTextView.text = stringNum
                     self.numArray = [String(result)]
                     num = "0"
                 }
@@ -126,13 +177,19 @@ class ViewController: UIViewController {
                     default:
                         break
                     }
-                    resultTextView.text = String(result)
+                    stringNum = String(result)
+                    if stringNum.hasSuffix(".0"){
+                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                        stringNum = stringNum.substring(to:currentIndex)
+                    }
+                    resultTextView.text = stringNum
                     activeBtn = false
                     self.numArray = [String(result)]
                     numArray.append("+")
                     num = "0"
                 }
             }else{
+                numArray.append("+")
                 num = "0"
             }
         case 13:
@@ -158,13 +215,19 @@ class ViewController: UIViewController {
                     default:
                         break
                     }
-                    resultTextView.text = String(result)
+                    stringNum = String(result)
+                    if stringNum.hasSuffix(".0"){
+                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                        stringNum = stringNum.substring(to:currentIndex)
+                    }
+                    resultTextView.text = stringNum
                     activeBtn = false
                     self.numArray = [String(result)]
                     numArray.append("-")
                     num = "0"
                 }
             }else{
+                numArray.append("-")
                 num = "0"
             }
         case 14:
@@ -190,13 +253,19 @@ class ViewController: UIViewController {
                     default:
                         break
                     }
-                    resultTextView.text = String(result)
+                    stringNum = String(result)
+                    if stringNum.hasSuffix(".0"){
+                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                        stringNum = stringNum.substring(to:currentIndex)
+                    }
+                    resultTextView.text = stringNum
                     activeBtn = false
                     self.numArray = [String(result)]
                     numArray.append("×")
                     num = "0"
                 }
             }else{
+                numArray.append("×")
                 num = "0"
             }
         case 15:
@@ -222,27 +291,47 @@ class ViewController: UIViewController {
                     default:
                         break
                     }
-                    resultTextView.text = String(result)
+                    stringNum = String(result)
+                    if stringNum.hasSuffix(".0"){
+                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                        stringNum = stringNum.substring(to:currentIndex)
+                    }
+                    resultTextView.text = stringNum
                     activeBtn = false
                     self.numArray = [String(result)]
                     numArray.append("÷")
                     num = "0"
                 }
             }else{
+                numArray.append("÷")
                 num = "0"
             }
         case 16:
             stringNum = resultTextView.text
             result = Double(stringNum)!/100
-            resultTextView.text = String(result)
+            stringNum = String(result)
+            if stringNum.hasSuffix(".0"){
+                let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                stringNum = stringNum.substring(to:currentIndex)
+            }
+            resultTextView.text = stringNum
             numArray = [String(result)]
             num = "0"
         case 17:
             stringNum = resultTextView.text
             result = Double(stringNum)! * (-1)
-            resultTextView.text = String(result)
+            stringNum = String(result)
+            if stringNum.hasSuffix(".0"){
+                let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                stringNum = stringNum.substring(to:currentIndex)
+            }
+            resultTextView.text = stringNum
             numArray = [String(result)]
             num = "0"
+        case 18:
+            num += "."
+            resultTextView.text = num
+            activeBtn = true
         default:
             break
         }
