@@ -25,98 +25,21 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func numberBtn(_ sender: UIButton) {
+        if num == "0" {
+            num = "\(sender.tag)"
+            resultTextView.text = "\(sender.tag)"
+        }else{
+            num += "\(sender.tag)"
+            resultTextView.text = num
+        }
+        activeBtn = true
+    }
+    
     @IBAction func btnTapped(_ sender: UIButton) {
         switch sender.tag {
         //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
-        case 0:
-            if num == "0" {
-                resultTextView.text = "0"
-            }else{
-                num += "0"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 1:
-            if num == "0" {
-                num = "1"
-                resultTextView.text = "1"
-            }else{
-                num += "1"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 2:
-            if num == "0" {
-                num = "2"
-                resultTextView.text = "2"
-            }else{
-                num += "2"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 3:
-            if num == "0" {
-                num = "3"
-                resultTextView.text = "3"
-            }else{
-                num += "3"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 4:
-            if num == "0" {
-                num = "4"
-                resultTextView.text = "4"
-            }else{
-                num += "4"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 5:
-            if num == "0" {
-                num = "5"
-                resultTextView.text = "5"
-            }else{
-                num += "5"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 6:
-            if num == "0" {
-                num = "6"
-                resultTextView.text = "6"
-            }else{
-                num += "6"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 7:
-            if num == "0" {
-                num = "7"
-                resultTextView.text = "7"
-            }else{
-                num += "7"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 8:
-            if num == "0" {
-                num = "8"
-                resultTextView.text = "8"
-            }else{
-                num += "8"
-                resultTextView.text = num
-            }
-            activeBtn = true
-        case 9:
-            if num == "0" {
-                num = "9"
-                resultTextView.text = "9"
-            }else{
-                num += "9"
-                resultTextView.text = num
-            }
-            activeBtn = true
+
         case 10:
             num = "0"
             resultTextView.text = num
