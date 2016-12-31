@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     
     @IBAction func btnTapped(_ sender: UIButton) {
         switch sender.tag {
-            //AC:10 =:11 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
+            //AC:1 =:2 +:12 -:13 ×:14 ÷:15 %:16 +/-:17 .:18
             
         case 10:
             num = "0"
