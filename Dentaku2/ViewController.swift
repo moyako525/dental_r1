@@ -46,39 +46,7 @@ class ViewController: UIViewController {
             resultTextView.text = num
             activeBtn = false
             self.numArray = ["0"]
-        case 2:
-            if activeBtn == true {
-                stringNum = resultTextView.text
-                if numArray.count == 1{
-                    numArray[0] = stringNum
-                    num = "0"
-                }else{
-                    numArray.append(stringNum)
-                    switch numArray[1] {
-                    case "+":
-                        result = Double(numArray[0])! + Double(numArray[2])!
-                    case "-":
-                        result = Double(numArray[0])! - Double(numArray[2])!
-                    case "×":
-                        result = Double(numArray[0])! * Double(numArray[2])!
-                    case "÷":
-                        result = Double(numArray[0])! / Double(numArray[2])!
-                    default:
-                        break
-                    }
-                    stringNum = String(result)
-                    if stringNum.hasSuffix(".0"){
-                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
-                        stringNum = stringNum.substring(to:currentIndex)
-                    }
-                    resultTextView.text = stringNum
-                    self.numArray = [String(result)]
-                    num = "0"
-                }
-            }else{
-                num = "0"
-            }
-        case 3,4,5,6:
+        case 2,3,4,5,6:
             switch sender.tag {
             case 3:
                 stringSymbol = "+"
@@ -95,7 +63,12 @@ class ViewController: UIViewController {
                 stringNum = resultTextView.text
                 if numArray.count == 1{
                     numArray[0] = stringNum
-                    numArray.append("\(stringSymbol)")
+                    switch sender.tag {
+                    case 3,4,5,6:
+                        numArray.append("\(stringSymbol)")
+                    default:
+                        break
+                    }
                     activeBtn = false
                     num = "0"
                     
@@ -118,14 +91,28 @@ class ViewController: UIViewController {
                         let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
                         stringNum = stringNum.substring(to:currentIndex)
                     }
+                    if stringNum.characters.count > 11 {
+                        let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: 10-stringNum.characters.count)
+                        stringNum = stringNum.substring(to:currentIndex)
+                    }
                     resultTextView.text = stringNum
                     activeBtn = false
                     self.numArray = [String(result)]
-                    numArray.append("\(stringSymbol)")
+                    switch sender.tag {
+                    case 3,4,5,6:
+                        numArray.append("\(stringSymbol)")
+                    default:
+                        break
+                    }
                     num = "0"
                 }
             }else{
-                numArray.append("\(stringSymbol)")
+                switch sender.tag {
+                case 3,4,5,6:
+                    numArray.append("\(stringSymbol)")
+                default:
+                    break
+                }
                 num = "0"
             }
         case 7:
@@ -134,6 +121,10 @@ class ViewController: UIViewController {
             stringNum = String(result)
             if stringNum.hasSuffix(".0"){
                 let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                stringNum = stringNum.substring(to:currentIndex)
+            }
+            if stringNum.characters.count > 11 {
+                let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: 10-stringNum.characters.count)
                 stringNum = stringNum.substring(to:currentIndex)
             }
             resultTextView.text = stringNum
@@ -145,6 +136,10 @@ class ViewController: UIViewController {
             stringNum = String(result)
             if stringNum.hasSuffix(".0"){
                 let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: -2)
+                stringNum = stringNum.substring(to:currentIndex)
+            }
+            if stringNum.characters.count > 11 {
+                let currentIndex = stringNum.index(stringNum.endIndex, offsetBy: 10-stringNum.characters.count)
                 stringNum = stringNum.substring(to:currentIndex)
             }
             resultTextView.text = stringNum
